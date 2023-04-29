@@ -6,4 +6,13 @@ const UserController=require('../controller/users_controller');
 
 router.get('/profile',UserController.profile);
 
+
+router.get('/sign-up',UserController.signup);
+
+router.get('/sign-in',UserController.signin);
+
+router.post('/create',UserController.create);
+
+
+
 module.exports=router;
