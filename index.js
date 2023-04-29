@@ -4,6 +4,8 @@ const app=express();
 
 const port=8000;
 
+const db=require('./config/mongoose');
+
 app.use(express.static('./assets'));
 //extract style and scripts from sub pages into the layouts
 app.set('layout extractStyles',true);
