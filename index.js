@@ -10,13 +10,11 @@ const passportLocal=require('./config/passport-local-strategy');
 
 const MongoStore=require('connect-mongo')(session);
 
-app.use(cookieParser())
-app.use(express.static('./assets'));
-
 
 
 app.use(express.urlencoded());
-
+app.use(cookieParser())
+app.use(express.static('./assets'));
 
 app.use(expressLayouts);
 //extract a style and scripts from sub pages into the layout
