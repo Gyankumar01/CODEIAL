@@ -3,21 +3,9 @@ const User=require('../models/users');
 
 module.exports.profile=function(req,res){
 
-    if(req.cookies.user_id){
-        User.findById(req.cookies.user_id,function(err,user){
-            if(user){
-                return res.render('users',{
-                    title:"user profile",
-                    user: user
-                })
-            }
-            return res.redirect('/users/sign-in');
-        });
-    }
-    else{
-        return res.redirect('/users/sign-in');
-    }
-
+    return res.render('users', {
+        title: 'User Profile'
+    })
     
 }
 
