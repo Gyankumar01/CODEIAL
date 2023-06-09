@@ -71,25 +71,7 @@ module.exports.create=function(req,res){
 }
 
 module.exports.createSession=function(req,res){
-//   //  find the user
-
-//     User.findOne({email:req.body.email},function(err,user){
-//         if(err){
-//             console.log('Error in finding the user in signin');
-//             return;
-//         }
-//         if(user){
-//             if(user.password != req.body.password){
-//                 return res.redirect('back');
-//             }
-//             res.cookie('user_id',user.id);
-//             return res.redirect('/users/profile');
-//         }
-//         else{
-//             return res.redirect('back');
-//         }
-//     })
-
+    // req.flash('success','Logged in successfully');
  return res.redirect('/');
    }
 
@@ -98,8 +80,10 @@ module.exports.createSession=function(req,res){
         if(err){
             console.log(err);
         }
+        // req.flash('success','Logged out successfully');
         return res.redirect('/');
     });
+   
    }
 
 
